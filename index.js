@@ -91,7 +91,7 @@ module.exports = plugin(
     const track = {
       appearance: "none",
       background:
-        "linear-gradient(to right, var(--tw-range-slider-track-progress-color) var(--tw-range-slider-track-progress)%, var(--tw-range-slider-track-color) var(--tw-range-slider-track-progress)%)",
+        "linear-gradient(to right, var(--tw-range-slider-track-progress-color) calc(var(--tw-range-slider-track-progress) * 100%), var(--tw-range-slider-track-color) calc(var(--tw-range-slider-track-progress) * 100%))",
       height: "var(--tw-range-slider-track-height)",
       borderRadius: "var(--tw-range-slider-track-height)",
     };
