@@ -28,6 +28,8 @@ module.exports = plugin(
         "0 0 var(--tw-range-slider-thumb-box-shadow-blur) var(--tw-range-slider-thumb-box-shadow-spread) var(--tw-range-slider-thumb-box-shadow-color)",
       "--tw-range-slider-thumb-size": "1em",
 
+      "--tw-range-slider-track-progress": "0",
+      "--tw-range-slider-track-progress-color": "#ffffff",
       "--tw-range-slider-track-color": "#efefef",
       "--tw-range-slider-track-height": "0.5em",
     });
@@ -46,6 +48,11 @@ module.exports = plugin(
         "range-slider-track": (value) => {
           return {
             "--tw-range-slider-track-color": value,
+          };
+        },
+        "range-slider-track-progress": (value) => {
+          return {
+            "--tw-range-slider-track-progress-color": value,
           };
         },
       },
@@ -83,7 +90,8 @@ module.exports = plugin(
 
     const track = {
       appearance: "none",
-      backgroundColor: "var(--tw-range-slider-track-color)",
+      background:
+        "linear-gradient(to right, var(--tw-range-slider-track-progress-color) var(--tw-range-slider-track-progress)%, var(--tw-range-slider-track-color) var(--tw-range-slider-track-progress)%)",
       height: "var(--tw-range-slider-track-height)",
       borderRadius: "var(--tw-range-slider-track-height)",
     };
