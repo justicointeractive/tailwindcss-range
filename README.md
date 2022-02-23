@@ -29,5 +29,11 @@ module.exports = {
   min={props.min}
   max={props.max}
   step={props.step}
+  style={
+    {
+      // due to lack of "progress fill" support in chrome this hack is needed
+      "--tw-range-slider-track-progress": props.value / (props.min - props.max),
+    } as React.CSSProperties
+  }
 />
 ```
